@@ -13,6 +13,7 @@ def afficher_heures():
         if heure_depart == heure_alarme:
             print("C'est l'heure")
             break
+        
         heures, minutes, secondes = heure_depart
         secondes += 1
 
@@ -30,7 +31,7 @@ def afficher_heures():
                 if heures == 24:
                     heures = 0
 
-                heure_depart = (heures, minutes, secondes)
+        heure_depart = (heures, minutes, secondes)
       
         time.sleep(1)
 
