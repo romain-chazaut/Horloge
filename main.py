@@ -1,19 +1,23 @@
 import time
+import winsound
+
 
 def afficher_heures():
     # Définir l'heure de départ à 16h30
     heure_depart = (16, 30, 00)
-    heure_alarme = (16, 31, 00)
+    heure_alarme = (16, 30, 10)
+    son_alarme = "alarme.wav"
    
     while True:
         # Afficher l'heure
         heures, minutes, secondes = heure_depart
-        print(f"{heures:02d}:{minutes:02d}:{secondes:02d}")
+        print(f"{heures:02d}:{minutes:02d}:{secondes:02d}", end="\r")
 
         if heure_depart == heure_alarme:
             print("C'est l'heure")
-            break
-        
+            winsound.PlaySound(son_alarme, winsound.SND_FILENAME)
+            
+
         heures, minutes, secondes = heure_depart
         secondes += 1
 
